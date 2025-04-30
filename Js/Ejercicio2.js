@@ -27,7 +27,7 @@ let ciudad = "";
 
 do {
   ciudad = prompt("Ingresa el nombre de una ciudad: ");
-  ciudades.unshift(ciudad);
+  ciudades.push(ciudad);
 }
 while (confirm("¿Desea ingresar otra ciudad? "))
 
@@ -45,16 +45,14 @@ document.writeln(`</ul>`)
 document.writeln(`<h3>Elementos del array de la primera, tercera y ultima posicion.</h3>`);
 
 document.writeln(`<ul>`)
-for(let i = 0; i < ciudades.length; i++) {
-  document.writeln(`<li>${ciudades[0]}</li>`)
-  document.writeln(`<li>${ciudades[2]}</li>`)
-  document.writeln(`<li>${ciudades[ciudades.length-1]}</li>`)
-}
+  document.writeln(`<li>Elemento de la 1ra posicion: ${ciudades[0]}</li>`)
+  document.writeln(`<li>Elemeneto de la 3ra posicion: ${ciudades[2]}</li>`)
+  document.writeln(`<li>Elemento de la ultima posicion: ${ciudades[ciudades.length-1]}</li>`)
 document.writeln(`</ul>`)
 
 document.writeln(`<h3>Se agrega la ciudad Paris al final del array.</h3>`);
 
-ciudades.unshift("Paris");
+ciudades.push("Paris");
 
 document.writeln(`<ul>`)
 for(let i = 0; i < ciudades.length; i++) {
@@ -64,5 +62,16 @@ document.writeln(`</ul>`)
 
 document.writeln(`<h3>Elemento de la segunda posicion del array.</h3>`);
 
-document.writeln(`${ciudades[1]}`)
+document.writeln(`<ul>`)
+  document.writeln(`<li>${ciudades[1]}</li>`)
+document.writeln(`</ul>`)
 
+document.writeln(`<h3>Sustituimos la ciudad en la 2da posicion por BARCELONA: </h3>`);
+
+ciudades[1] = "Barcelona"
+
+document.writeln(`<ul>`)
+for(let i = 0; i < ciudades.length; i++) {
+  document.writeln(`<li>${ciudades[i]}</li>`)
+}
+document.writeln(`</ul>`)
